@@ -1,13 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import TaskList from './Component/TaskList'
+import Footer from './Component/Fotter';
+import GlobalState from './Context/GlobalState';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <GlobalState>
+        <View style={styles.container}>
+          <TaskList />
+          <Footer/>
+      </View>
+      </GlobalState>
   );
 }
 
